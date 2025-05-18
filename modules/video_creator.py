@@ -103,7 +103,7 @@ class VideoCreator:
         
         return text_clip
     
-    def create_video(self, text, output_name=None, skip_text=False, use_original_duration=False):
+    def create_video(self, text, output_name=None, skip_text=False, use_original_duration=False, mute_audio=True):
         """
         テキストと背景動画を組み合わせて動画を作成する
         
@@ -112,6 +112,7 @@ class VideoCreator:
             output_name (str, optional): 出力ファイル名（拡張子なし）
             skip_text (bool, optional): Trueの場合、テキスト表示をスキップします（テスト用）
             use_original_duration (bool, optional): Trueの場合、背景動画の長さをそのまま使用します
+            mute_audio (bool, optional): Trueの場合、動画の音声を無効にします（デフォルト: True）
             
         Returns:
             str: 作成された動画のパス、失敗した場合はNone
@@ -131,6 +132,11 @@ class VideoCreator:
             
             # 背景動画のクリップ作成
             background_clip = VideoFileClip(background_path).resize(height=config.VIDEO_HEIGHT)
+            
+            # 音声を無効にする場合
+            if mute_audio:
+                background_clip = background_clip.without_audio()
+                logger.info("動画の音声を無効化しました")
             
             # 背景動画の中央部分をクロップして縦長に
             background_clip = background_clip.crop(
@@ -172,16 +178,28 @@ class VideoCreator:
             
             # 書き出し
             logger.info(f"動画の書き出し開始: {output_path}")
-            final_clip.write_videofile(
-                output_path,
-                fps=30,
-                codec='libx264',
-                audio_codec='aac',
-                temp_audiofile=os.path.join(self.temp_dir, 'temp_audio.m4a'),
-                remove_temp=True,
-                threads=4,
-                preset='ultrafast'  # 高速書き出し（品質は低い）
-            )
+            
+            # 音声を無効にする場合とそうでない場合で書き出しオプションを変更
+            if mute_audio:
+                final_clip.write_videofile(
+                    output_path,
+                    fps=30,
+                    codec='libx264',
+                    audio=False,  # 音声トラックなし
+                    threads=4,
+                    preset='ultrafast'  # 高速書き出し（品質は低い）
+                )
+            else:
+                final_clip.write_videofile(
+                    output_path,
+                    fps=30,
+                    codec='libx264',
+                    audio_codec='aac',
+                    temp_audiofile=os.path.join(self.temp_dir, 'temp_audio.m4a'),
+                    remove_temp=True,
+                    threads=4,
+                    preset='ultrafast'  # 高速書き出し（品質は低い）
+                )
             
             # クリップを閉じる
             background_clip.close()
