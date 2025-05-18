@@ -61,7 +61,11 @@ class YouTubeUploader:
                     
                     flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
                         self.client_secrets_file, SCOPES)
-                    credentials = flow.run_local_server(port=8080)
+                    # 明示的にリダイレクトURIを指定（末尾のスラッシュなし）
+                    credentials = flow.run_local_server(
+                        port=8080,
+                        redirect_uri_trailing_slash=False
+                    )
                 
                 # 認証情報を保存
                 with open(self.token_pickle_path, 'wb') as token:
