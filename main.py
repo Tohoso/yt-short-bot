@@ -58,10 +58,11 @@ class YouTubeShortsBot:
             
             # 出力ファイル名を作成
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_name = f"{slug}_{timestamp}"
+            output_filename = f"{slug}_{timestamp}.mp4"
+            output_path = os.path.join(config.OUTPUT_DIR, output_filename)
             
             # 2. 動画作成
-            video_path = self.video_creator.create_video(text, output_name)
+            video_path = self.video_creator.create_video(text, output_path, subtitles=text)
             if not video_path:
                 return {'success': False, 'error': '動画作成に失敗しました'}
             
