@@ -5,9 +5,10 @@ import os
 import sys
 import random
 import logging
-from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
+import math
 from datetime import datetime
 import glob
+from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
 
 # 親ディレクトリをインポートパスに追加
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -102,13 +103,16 @@ class VideoCreator:
         
         return text_clip
     
-    def create_video(self, text, output_name=None):
+    def create_video(self, text, output_name=None, skip_text=False, use_original_duration=False, mute_audio=True):
         """
         テキストと背景動画を組み合わせて動画を作成する
         
         Args:
             text (str): 表示するテキスト
             output_name (str, optional): 出力ファイル名（拡張子なし）
+            skip_text (bool, optional): Trueの場合、テキスト表示をスキップします（テスト用）
+            use_original_duration (bool, optional): Trueの場合、背景動画の長さをそのまま使用します
+            mute_audio (bool, optional): Trueの場合、動画の音声を無効にします（デフォルト: True）
             
         Returns:
             str: 作成された動画のパス、失敗した場合はNone
@@ -129,6 +133,11 @@ class VideoCreator:
             # 背景動画のクリップ作成
             background_clip = VideoFileClip(background_path).resize(height=config.VIDEO_HEIGHT)
             
+            # 音声を無効にする場合
+            if mute_audio:
+                background_clip = background_clip.without_audio()
+                logger.info("動画の音声を無効化しました")
+            
             # 背景動画の中央部分をクロップして縦長に
             background_clip = background_clip.crop(
                 x_center=background_clip.w/2,
@@ -137,36 +146,65 @@ class VideoCreator:
                 height=config.VIDEO_HEIGHT
             )
             
-            # 動画の長さを設定
-            background_clip = background_clip.subclip(0, config.VIDEO_DURATION)
+            # オリジナルの背景動画の長さを保存
+            original_duration = background_clip.duration
             
-            # ループ再生
-            if background_clip.duration < config.VIDEO_DURATION:
-                n_loops = int(config.VIDEO_DURATION / background_clip.duration) + 1
-                background_clip = background_clip.loop(n=n_loops).subclip(0, config.VIDEO_DURATION)
+            # テスト用：背景動画の元の長さを使用する場合
+            if use_original_duration:
+                # 元の長さから少し短くして安全マージンを確保
+                safe_duration = original_duration - 0.2  # 0.2秒の安全マージン
+                background_clip = background_clip.subclip(0, safe_duration)
+                logger.info(f"背景動画の元の長さを使用: {safe_duration}秒")
+            # 通常の場合は設定された長さに合わせる
+            elif original_duration < config.VIDEO_DURATION:
+                # 短い場合はループする
+                n_loops = math.ceil(config.VIDEO_DURATION / original_duration)
+                background_clip = background_clip.loop(n=n_loops)
+                # 安全マージンをサブクリップに反映
+                safe_duration = min(config.VIDEO_DURATION, background_clip.duration - 0.5)
+                background_clip = background_clip.subclip(0, safe_duration)
+            else:
+                # 背景動画が十分長い場合は元の設定通りにクリップ
+                background_clip = background_clip.subclip(0, config.VIDEO_DURATION)
             
-            # テキストクリップ作成
-            text_clip = self.create_text_clip(text, config.VIDEO_DURATION)
-            
-            # 合成
-            final_clip = CompositeVideoClip([background_clip, text_clip])
+            # テキスト表示をスキップする場合
+            if skip_text:
+                final_clip = background_clip
+            else:
+                # テキストクリップ作成
+                text_clip = self.create_text_clip(text, config.VIDEO_DURATION)
+                # 合成
+                final_clip = CompositeVideoClip([background_clip, text_clip])
             
             # 書き出し
             logger.info(f"動画の書き出し開始: {output_path}")
-            final_clip.write_videofile(
-                output_path,
-                fps=30,
-                codec='libx264',
-                audio_codec='aac',
-                temp_audiofile=os.path.join(self.temp_dir, 'temp_audio.m4a'),
-                remove_temp=True,
-                threads=4,
-                preset='ultrafast'  # 高速書き出し（品質は低い）
-            )
+            
+            # 音声を無効にする場合とそうでない場合で書き出しオプションを変更
+            if mute_audio:
+                final_clip.write_videofile(
+                    output_path,
+                    fps=30,
+                    codec='libx264',
+                    audio=False,  # 音声トラックなし
+                    threads=4,
+                    preset='ultrafast'  # 高速書き出し（品質は低い）
+                )
+            else:
+                final_clip.write_videofile(
+                    output_path,
+                    fps=30,
+                    codec='libx264',
+                    audio_codec='aac',
+                    temp_audiofile=os.path.join(self.temp_dir, 'temp_audio.m4a'),
+                    remove_temp=True,
+                    threads=4,
+                    preset='ultrafast'  # 高速書き出し（品質は低い）
+                )
             
             # クリップを閉じる
             background_clip.close()
-            text_clip.close()
+            if not skip_text:
+                text_clip.close()
             final_clip.close()
             
             logger.info(f"動画の書き出し完了: {output_path}")
