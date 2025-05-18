@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+.env
+credentials/*
+!credentials/.gitkeep
+!credentials/README.md
+outputs/*
+!outputs/.gitkeep
+temp/*
+!temp/.gitkeep
+
+# YouTube API credentials
+client_secrets.json
+credentials.json
+token.json
+youtube_token.pickle
+
+# Discord bot token
+discord_token.txt
+
+# OpenAI API key
+openai_api_key.txt

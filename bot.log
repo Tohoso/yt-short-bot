@@ -1,0 +1,127 @@
+2025-05-18 19:26:26,198 - youtube-shorts-bot.text_generator - INFO - 「猫」のテキスト生成を開始
+2025-05-18 19:26:26,641 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2025-05-18 19:26:26,643 - youtube-shorts-bot.text_generator - ERROR - テキスト生成中にエラーが発生: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-7-sonnet:thinking'}}
+2025-05-18 19:26:47,155 - youtube-shorts-bot.text_generator - INFO - 「猫」のテキスト生成を開始
+2025-05-18 19:26:47,509 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2025-05-18 19:26:47,511 - youtube-shorts-bot.text_generator - ERROR - テキスト生成中にエラーが発生: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-7-sonnet'}}
+2025-05-18 19:27:22,123 - youtube-shorts-bot.text_generator - INFO - 「猫」のテキスト生成を開始
+2025-05-18 19:27:24,660 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:27:24,673 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: 猫は1日のうち約16時間を睡眠にあてています。ネコ科の動物の中で最も長い睡眠時間を持つ賢い猫ちゃんたちは、狩りの合間に十分な休息を取ることで体力を温存しているのです。
+2025-05-18 19:30:02,432 - youtube-shorts-bot.text_generator - INFO - 「猫」のテキスト生成を開始
+2025-05-18 19:30:04,701 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:30:04,714 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: 猫は1日の70%を寝て過ごし、睡眠時間は平均で16時間にも達する。まさに"プロの睡眠家"！
+2025-05-18 19:30:57,793 - youtube-shorts-bot.text_generator - INFO - 「猫」のテキスト生成を開始
+2025-05-18 19:31:00,139 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:31:00,152 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: 猫の瞳に映る世界は、私たちが見落としている小さな幸せであふれている。彼らと過ごす時間を大切に。
+2025-05-18 19:31:05,834 - youtube-shorts-bot.text_generator - INFO - 「猫」のテキスト生成を開始
+2025-05-18 19:31:08,249 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:31:08,258 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: 猫は人間の声を聞き分けられるが、無視することを選ぶ生き物。あなたを認識していても反応しないのは性格なんです🐱
+2025-05-18 19:31:54,216 - youtube-shorts-bot.text_generator - INFO - 「人生が好転する習慣10選」のテキスト生成を開始
+2025-05-18 19:31:56,805 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:31:56,818 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: 「変化は行動から。毎日の小さな習慣が、いつの間にか人生の大きな分岐点になる。あなたの未来は今日の選択で決まる。」
+2025-05-18 19:33:54,311 - youtube-shorts-bot.text_generator - INFO - 「人生が好転する習慣」のテキスト生成を開始
+2025-05-18 19:33:56,873 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:33:56,886 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: 人間の脳は、新しい習慣を形成するのに平均21日ではなく、実際には66日かかることが研究で判明しています。つまり、人生好転の鍵となる習慣も、根付くまでには約2ヶ月の継続が必要なのです。
+2025-05-18 19:37:07,517 - youtube-shorts-bot.text_generator - INFO - 「人生が好転する習慣」のテキスト生成を開始
+2025-05-18 19:37:07,517 - youtube-shorts-bot.text_generator - ERROR - テキスト生成中にエラーが発生: create() got an unexpected keyword argument 'budget_tokens'
+2025-05-18 19:42:25,450 - youtube-shorts-bot.text_generator - INFO - 「人生が好転する習慣」のテキスト生成を開始
+2025-05-18 19:43:00,492 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:43:00,507 - youtube-shorts-bot.text_generator - ERROR - テキスト生成中にエラーが発生: 'ThinkingBlock' object has no attribute 'text'
+2025-05-18 19:45:47,729 - youtube-shorts-bot.text_generator - INFO - 「自己管理が人生を変える」のテキスト生成を開始
+2025-05-18 19:45:53,721 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:45:53,729 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: メインテーマ「自己管理が人生を変える」の名言を生成します。
+今ここにいる汚れた自分
+昨日より良い行動をせよ
+人生は習慣が全て
+勇気ある一歩で未来が
+いつまで後回しにする?
+選択の時が今きた
+小さな積み重ねが山となる
+逃げずに立ち向かえ
+理想を実現する時が来た
+2025-05-18 19:48:19,431 - youtube-shorts-bot.text_generator - INFO - 「自己管理が人生を変える」のテキスト生成を開始
+2025-05-18 19:48:24,610 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-05-18 19:48:24,615 - youtube-shorts-bot.text_generator - INFO - テキスト生成完了: 動け、今この瞬間から
+昨日の自分に縛られる？
+一歩を踏み出す勇気あれ
+前に進むか、そのままか
+明日へ続く小さな一歩
+選ぶが人生、選ばぬが淘汰
+習慣の力、無視するな
+逆境を飼い慣らす覚悟
+夢は手に入る、行動次第
+自己管理人生の鍵を握る
+2025-05-18 19:50:15,578 - youtube-shorts-bot.video_creator - INFO - 背景動画を選択: sample_background.mp4
+2025-05-18 19:50:15,594 - youtube-shorts-bot.video_creator - ERROR - 動画作成中にエラーが発生: MoviePy error: failed to read the duration of file /Users/invis/yt-short-bot/assets/backgrounds/sample_background.mp4.
+Here are the file infos returned by ffmpeg:
+
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+  configuration: --prefix=/Volumes/tempdisk/sw --extra-cflags=-fno-stack-check --arch=arm64 --cc=/usr/bin/clang --enable-gpl --enable-libvmaf --enable-libopenjpeg --enable-libopus --enable-libmp3lame --enable-libx264 --enable-libx265 --enable-libvpx --enable-libwebp --enable-libass --enable-libfreetype --enable-fontconfig --enable-libtheora --enable-libvorbis --enable-libsnappy --enable-libaom --enable-libvidstab --enable-libzimg --enable-libsvtav1 --enable-libharfbuzz --enable-libkvazaar --pkg-config-flags=--static --enable-ffplay --enable-postproc --enable-neon --enable-runtime-cpudetect --disable-indev=qtkit --disable-indev=x11grab_xcb
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x11e7069d0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x11e7069d0] moov atom not found
+[in#0 @ 0x11e706780] Error opening input: Invalid data found when processing input
+Error opening input file /Users/invis/yt-short-bot/assets/backgrounds/sample_background.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-05-18 19:50:52,540 - youtube-shorts-bot.video_creator - INFO - 背景動画を選択: sample_background.mp4
+2025-05-18 19:50:52,557 - youtube-shorts-bot.video_creator - ERROR - 動画作成中にエラーが発生: MoviePy error: failed to read the duration of file /Users/invis/yt-short-bot/assets/backgrounds/sample_background.mp4.
+Here are the file infos returned by ffmpeg:
+
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+  configuration: --prefix=/Volumes/tempdisk/sw --extra-cflags=-fno-stack-check --arch=arm64 --cc=/usr/bin/clang --enable-gpl --enable-libvmaf --enable-libopenjpeg --enable-libopus --enable-libmp3lame --enable-libx264 --enable-libx265 --enable-libvpx --enable-libwebp --enable-libass --enable-libfreetype --enable-fontconfig --enable-libtheora --enable-libvorbis --enable-libsnappy --enable-libaom --enable-libvidstab --enable-libzimg --enable-libsvtav1 --enable-libharfbuzz --enable-libkvazaar --pkg-config-flags=--static --enable-ffplay --enable-postproc --enable-neon --enable-runtime-cpudetect --disable-indev=qtkit --disable-indev=x11grab_xcb
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x14ef042e0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x14ef042e0] moov atom not found
+[in#0 @ 0x14ef04080] Error opening input: Invalid data found when processing input
+Error opening input file /Users/invis/yt-short-bot/assets/backgrounds/sample_background.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-05-18 19:51:19,347 - youtube-shorts-bot.video_creator - INFO - 背景動画を選択: sample_background.mp4
+2025-05-18 19:51:19,373 - youtube-shorts-bot.video_creator - ERROR - 動画作成中にエラーが発生: MoviePy error: failed to read the duration of file /Users/invis/yt-short-bot/assets/backgrounds/sample_background.mp4.
+Here are the file infos returned by ffmpeg:
+
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+  configuration: --prefix=/Volumes/tempdisk/sw --extra-cflags=-fno-stack-check --arch=arm64 --cc=/usr/bin/clang --enable-gpl --enable-libvmaf --enable-libopenjpeg --enable-libopus --enable-libmp3lame --enable-libx264 --enable-libx265 --enable-libvpx --enable-libwebp --enable-libass --enable-libfreetype --enable-fontconfig --enable-libtheora --enable-libvorbis --enable-libsnappy --enable-libaom --enable-libvidstab --enable-libzimg --enable-libsvtav1 --enable-libharfbuzz --enable-libkvazaar --pkg-config-flags=--static --enable-ffplay --enable-postproc --enable-neon --enable-runtime-cpudetect --disable-indev=qtkit --disable-indev=x11grab_xcb
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1488044f0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1488044f0] moov atom not found
+[in#0 @ 0x148804290] Error opening input: Invalid data found when processing input
+Error opening input file /Users/invis/yt-short-bot/assets/backgrounds/sample_background.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-05-18 19:52:36,607 - youtube-shorts-bot.video_creator - INFO - 背景動画を選択: sample_background2.mp4
+2025-05-18 19:52:36,884 - youtube-shorts-bot.video_creator - ERROR - 動画作成中にエラーが発生: MoviePy Error: creation of None failed because of the following error:
+
+[Errno 2] No such file or directory: 'unset'.
+
+.This error can be due to the fact that ImageMagick is not installed on your computer, or (for Windows users) that you didn't specify the path to the ImageMagick binary in file conf.py, or that the path you specified is incorrect
+2025-05-18 19:52:55,514 - py.warnings - WARNING - /Users/invis/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+2025-05-18 19:52:58,213 - youtube-shorts-bot - ERROR - YouTube Client Secrets File (/Users/invis/yt-short-bot/credentials/client_secrets.json) が見つかりません
+2025-05-18 19:52:58,213 - youtube-shorts-bot.main - ERROR - 設定の検証に失敗しました。終了します。
